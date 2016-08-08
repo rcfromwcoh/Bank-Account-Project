@@ -28,6 +28,9 @@ namespace BankAccountProject
         protected int accountNumber;
         protected string address;
 
+
+        private string CheckingAccountBalance;
+
         //Properties
         public string ClientName
         {
@@ -55,7 +58,7 @@ namespace BankAccountProject
         {
             this.clientName = "Joe Smith";
             this.address = "123 Anywhere St., Cleveland, OH 44113";
-            this.accountBalance = 10000;
+            this.accountBalance = 21434;
             this.accountNumber = 123456;
 
 
@@ -87,6 +90,7 @@ namespace BankAccountProject
             Console.WriteLine("Client Name: " + clientName);
             Console.WriteLine("Account Number: " + accountNumber);
             Console.WriteLine("Account Balance: " + this.accountBalance);
+            Console.WriteLine("Checking Account Balance: " + CheckingAccountBalance);
 
         }
 

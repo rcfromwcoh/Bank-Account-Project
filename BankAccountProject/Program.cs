@@ -80,32 +80,21 @@ namespace BankAccountProject
             totalBalance = (checkingBalance + reserveBalance + savingsBalance);
             string clientInput = "0";
             
-            //PrintStats();
 
             Account joeSmith = new Account();
-            //joeSmith.PrintStats();
             CheckingAccount checkingUser = new CheckingAccount();
+
 
             StringBuilder mainMenu = new StringBuilder();
             mainMenu.Append("OurBank Main Menu\n");
-            //joeSmith.PrintStats();
-            //mainMenu.Append("Client Name: ");
-            //mainMenu.Append(clientName+" \n");
-            //mainMenu.Append("ID Number: ");
-            //mainMenu.Append(clientIdNumber + "\n");
             mainMenu.Append("View Client Information, Press '1'\n");
-            //mainMenu.Append("Total of All Account Balances: "+ totalBalance + "\n");
             mainMenu.Append("View Account Balance Information, Press '2'\n");
-            //mainMenu.Append("Checking Account Balance: "+ checkingBalance + "\n");
-            //mainMenu.Append("Reserve Account Balance: " + reserveBalance+ "\n");
-            //mainMenu.Append("Savings Account Balance: " + savingsBalance + "\n");
             mainMenu.Append("To Deposit Funds, Press '3'\n");
             mainMenu.Append("To Withdraw Funds, Press '4'\n");
             mainMenu.Append("To Exit the Application, Press '5'\n");
             mainMenu.Append("Thank you for being a valued OurBank customer!\n");
             mainMenu.Append("Today's Date and time is: " + DateTime.Now + "\n");
             Console.WriteLine(mainMenu.ToString());
-            joeSmith.PrintStats();
             clientInput = Console.ReadLine();
             if(clientInput == "1")
             {

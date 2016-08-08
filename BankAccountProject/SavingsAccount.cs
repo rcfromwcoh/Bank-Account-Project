@@ -8,78 +8,50 @@ namespace BankAccountProject
 {
     class SavingsAccount : Account
     {
-        //Field 1
+        private int savingsAccountNumber;
+        private double savingsAccountBalance;
 
-
-        //Field 2
-
-
-        //Property 1
-
-
-        //Property 2
-
-
-        //Constructor 1
-        private string jobTitle;
-        private int money;
-        private int hunger;
-        private string name;
 
         //Properties
-        public string JobTitle
+
+        public int SavingsAccountNumber
         {
-            get { return this.jobTitle; }
-            set { this.jobTitle = value; }
+            get { return this.savingsAccountNumber; }
+            set { this.savingsAccountNumber = value; }
         }
-        public int Money
+        public double SavingsAccountBalance
         {
-            get { return this.money; }
-            set { this.money = value; }
+            get { return this.savingsAccountBalance; }
+            set { this.savingsAccountBalance = value; }
         }
-        public int Hunger
-        {
-            get { return this.hunger; }
-            set { this.hunger = value; }
-        }
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
+
 
         //Constructors
         public SavingsAccount()
         {
-            this.jobTitle = "Mechanic";
-            this.money = 10000;
-            this.hunger = 50;
-            this.name = "Jane";
+
+            this.savingsAccountNumber = 345678;
+            this.savingsAccountBalance = 8000;
+
         }
 
         //Methods
 
-        public void Raise()
+        public void AddInterest()
         {
-            money = money + 5000;
+            Console.WriteLine("Today is your lucky day! We are adding interest today.");
+            double interestRate = .05;
+            double interestAdded = savingsAccountBalance * interestRate;
+            savingsAccountBalance = interestAdded + savingsAccountBalance;
+            Console.WriteLine("Thank you. You have earned interest in the amount of +" + interestAdded + " on " + DateTime.Now);
+            Console.WriteLine("Your total available balance is: " + savingsAccountBalance);
+
         }
 
-        public void Eat()
+        public void PrintSavingsStats()
         {
-            hunger = hunger - 15;
-            money = money - 2000;
-        }
+            Console.WriteLine("Savings Balance: " + this.savingsAccountBalance);
 
-        public void PrintStats()
-        {
-            Console.WriteLine("Money: " + this.money);
-            Console.WriteLine("Hunger: " + this.hunger);
-        }
-
-        public void Tick()
-        {
-            money = money - 1000;
-            hunger = hunger + 5;
         }
 
     }

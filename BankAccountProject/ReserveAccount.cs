@@ -9,77 +9,51 @@ namespace BankAccountProject
     class ReserveAccount : Account
     {
 
-        //Field 1
+        private int reserveAccountNumber;
+        private double reserveAccountBalance;
 
-
-        //Field 2
-
-
-        //Property 1
-
-
-        //Property 2
-
-
-        //Constructor 1\private string jobTitle;
-        private int money;
-        private int hunger;
-        private string name;
 
         //Properties
-        //public string JobTitle
-        //{
-        //    get { return this.jobTitle; }
-        //    set { this.jobTitle = value; }
-        //}
-        public int Money
+
+        public int ReserveAccountNumber
         {
-            get { return this.money; }
-            set { this.money = value; }
+            get { return this.reserveAccountNumber; }
+            set { this.reserveAccountNumber = value; }
         }
-        public int Hunger
+        public double ReserveAccountBalance
         {
-            get { return this.hunger; }
-            set { this.hunger = value; }
+            get { return this.reserveAccountBalance; }
+            set { this.reserveAccountBalance = value; }
         }
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
+
 
         //Constructors
         public ReserveAccount()
         {
-            //this.jobTitle = "Mechanic";
-            this.money = 10000;
-            this.hunger = 50;
-            this.name = "Jane";
+
+            this.reserveAccountNumber = 456789;
+            this.reserveAccountBalance = 2000;
+
         }
 
         //Methods
 
-        public void Raise()
+        public void AddReserve()
         {
-            money = money + 5000;
+            Console.WriteLine("We can review your Reserve account to see if you qualify for a larger reserve amount.");
+            Console.WriteLine("Please enter your three digit credit score");
+            int creditScore = Convert.ToInt32(Console.ReadLine());
+            int reserveBump = 1500; 
+            Console.WriteLine("Thank you. You have earned additional reserve in the amount of +" + reserveBump + " on " + DateTime.Now);
+            reserveAccountBalance = reserveAccountBalance + reserveBump;
+            Console.WriteLine("Your total available reserve is: " + reserveAccountBalance);
+
         }
 
-        public void Eat()
+        public void PrintReserveStats()
         {
-            hunger = hunger - 15;
-            money = money - 2000;
-        }
+            Console.WriteLine("Reserve Balance: " + this.reserveAccountBalance);
 
-        public void PrintStats()
-        {
-            Console.WriteLine("Money: " + this.money);
-            Console.WriteLine("Hunger: " + this.hunger);
-        }
-
-        public void Tick()
-        {
-            money = money - 1000;
-            hunger = hunger + 5;
         }
 
     }

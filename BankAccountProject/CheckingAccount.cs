@@ -10,26 +10,13 @@ namespace BankAccountProject
     class CheckingAccount : Account
     {
         //Checks will go here (Withdrawal Method)
-        //ATM Withdrawls
-        //Point of Sale Debit Purchases
-        //ACH Withdrawls
-
-
-
-
-
-
-
-
-        //Constructor 1
-
 
         // Fields 
 
         private int checkingAccountNumber;
         private double checkingAccountBalance;
 
-
+        
         //Properties
 
         public int CheckingAccountNumber
@@ -61,33 +48,21 @@ namespace BankAccountProject
             int checkNumber = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("How much is the check in dollars and cents?");
             double checkAmount = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Thank you. You have withdrawn check number " + checkNumber + " in the amount of -" + checkAmount + " on " + DateTime.Now);
+            checkingAccountBalance = checkingAccountBalance - checkAmount;
+            Console.WriteLine("Your total available balance is: " + checkingAccountBalance);
 
-
-        }
-
-        public void Eat()
-        {
-            //hunger = hunger - 15;
-            //money = money - 2000;
         }
 
         public void PrintCheckingStats()
         {
             Console.WriteLine("Checking Balance: " + this.checkingAccountBalance);
-            //Console.WriteLine("Hunger: " + this.hunger);
+
         }
 
-        public void Tick()
-        {
-            //money = money - 1000;
-            //hunger = hunger + 5;
-        }
+       
 
-        StreamWriter writer = new StreamWriter("checking.txt");
- 
-        //{	
-        //console.WriteLine(“Hello World”);
-    //}
-        
+
+
     }
 }

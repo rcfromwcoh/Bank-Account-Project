@@ -18,19 +18,8 @@ namespace BankAccountProject
         //  Withdrawls
         //  View
         //Current balance will go here
-        //Available balance will go here
 
         //When the customer enters '2' on the main menu, it goes here
-        
- 
-
-        
-        
- 
-
-        
-
-
 
 
         //Fields
@@ -64,14 +53,14 @@ namespace BankAccountProject
         //Constructors
         public Account()
         {
-            this.clientName= "Joe Smith";
+            this.clientName = "Joe Smith";
             this.address = "123 Anywhere St., Cleveland, OH 44113";
             this.accountBalance = 10000;
             this.accountNumber = 123456;
-            
 
-        
-    }
+
+
+        }
 
         //Methods
 
@@ -98,7 +87,7 @@ namespace BankAccountProject
             Console.WriteLine("Client Name: " + clientName);
             Console.WriteLine("Account Number: " + accountNumber);
             Console.WriteLine("Account Balance: " + this.accountBalance);
-            //Console.WriteLine("Hunger: " + this.hunger);
+
         }
 
 
@@ -108,5 +97,7 @@ namespace BankAccountProject
             Console.WriteLine("Client Name: " + clientName);
             Console.WriteLine("Client Address: " + address);
         }
+
+
     }
 }

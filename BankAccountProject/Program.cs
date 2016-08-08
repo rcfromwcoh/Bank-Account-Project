@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace BankAccountProject
 {
@@ -72,18 +73,18 @@ namespace BankAccountProject
             // Each transaction should show the transaction amount
             // Each transaction should show the new current balance after the transaction
 
-            string clientName = "Joe Smith";
-            double clientIdNumber = 00123456;
             double totalBalance = 0.0d;
             double checkingBalance = 0.0d;
             double reserveBalance = 0.0d;
             double savingsBalance = 0.0d;
             totalBalance = (checkingBalance + reserveBalance + savingsBalance);
             string clientInput = "0";
+            
             //PrintStats();
 
             Account joeSmith = new Account();
             //joeSmith.PrintStats();
+            CheckingAccount checkingUser = new CheckingAccount();
 
             StringBuilder mainMenu = new StringBuilder();
             mainMenu.Append("OurBank Main Menu\n");
@@ -122,12 +123,32 @@ namespace BankAccountProject
             }
             else if(clientInput == "4")
             {
-                joeSmith.Withdrawl();
+                Console.Clear();
+                Console.WriteLine("Do you want to write a check (1), or withdrawl from savings (2)?");
+                int userResponse = Convert.ToInt32(Console.ReadLine());
+                if (userResponse == 1)
+                    checkingUser.WriteCheck();
+                else
+                    joeSmith.Withdrawl();
             }
             Console.ReadKey();
 
-    }
+            StreamWriter checkingWriter = new StreamWriter("checking.txt");
+            using (checkingWriter){
+            checkingWriter.Write("Hekki Wirld");
+            }
+            StreamWriter savingsWriter = new StreamWriter("savings.txt");
+            using (savingsWriter)
+            {
+                savingsWriter.Write(DateTime.Now);
+            }
+            StreamWriter reserveWriter = new StreamWriter("reserve.txt");
+            using (reserveWriter)
+            {
+                reserveWriter.Write(DateTime.Now);
+            }
+        }
 
-        
+
     }
 }
